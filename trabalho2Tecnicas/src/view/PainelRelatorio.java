@@ -21,7 +21,9 @@ public class PainelRelatorio extends JPanel{
 	private JScrollPane barraRolagem;
 	public Partida p;
 	private PainelBotoes pb;
-	ArrayList<Celula> celula;
+	private PainelOpcoes po = new PainelOpcoes(null);
+	private Jogador jogador = new Jogador(po.nomeJogador);
+	private ArrayList<Celula> celula;
 
 	public PainelRelatorio() {
 		pb = new PainelBotoes();
@@ -35,7 +37,7 @@ public class PainelRelatorio extends JPanel{
 		this.add(painelFundo);
 	}
 
-	Object[][] dados = { { new Jogador().getNome(), new Partida(celula).getRodada(), "Cel vazias", new Pontuacao().pontuacaoGeral(),  new Aluno().getQuantAlunosPegos(), new Bug().getQuantBugPego() },
+	Object[][] dados = { { jogador.getNome(), new Partida(celula).getRodada(), "Cel vazias", new Pontuacao().pontuacaoGeral(),  new Aluno().getQuantAlunosPegos(), new Bug().getQuantBugPego() },
 
 	};
 

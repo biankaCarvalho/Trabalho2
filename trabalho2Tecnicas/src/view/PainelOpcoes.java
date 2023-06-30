@@ -17,8 +17,9 @@ public class PainelOpcoes extends JPanel{
 	private JButton jogar;
 	private JButton relatorio;
 	private Jogador jogador;
-	private String nomeJogador;
+	protected String nomeJogador;
 	private Janela janela;
+	private JTextField caixa;
 
 	public PainelOpcoes(Janela janela) {
 		
@@ -26,11 +27,11 @@ public class PainelOpcoes extends JPanel{
 		JLabel label = new JLabel("Nome: ");
 		this.add(label);
 		setBackground(Color.lightGray);
-		JTextField caixa = new JTextField();
+		caixa = new JTextField();
 		caixa.setPreferredSize(new Dimension(80, 27));
-		nomeJogador = caixa.getText();
-		new Jogador(nomeJogador);
 		this.add(caixa);
+		nomeJogador = caixa.getText();
+		jogador = new Jogador(nomeJogador);
 		juntarBotoes();
 		
 		this.setLayout(new FlowLayout());
@@ -38,11 +39,7 @@ public class PainelOpcoes extends JPanel{
 	
 	private void juntarBotoes() {
 		jogar = criarBotaoOpcao("Jogar", new MostrarTabuleiro(janela));
-		//jogar.addActionListener(new MostrarTabuleiro(janela));
-	
 		relatorio =  criarBotaoOpcao("Relatório", new MostrarRelatorio(janela));
-		//relatorio.addActionListener(new MostrarRelatorio(janela));
-		
 		this.add(jogar);
 		this.add(relatorio);
 	}

@@ -46,12 +46,6 @@ public class Plano {
 		return null;
 	}
 
-	public void retornarCelulas() {
-		for (int i = 0; i < listaDeCelulas.size(); i++) {
-			System.out.println(listaDeCelulas.get(i).imprimir());
-		}
-	}
-		
 	public int getTamanhoX() {
 		return tamanhoX;
 	}

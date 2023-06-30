@@ -5,27 +5,29 @@ import java.awt.event.ActionListener;
 import model.Dados;
 import java.io.File;
 
+import controller.Jogador;
 import controller.Partida;
 import controller.Plano;
 
-public class MostrarTabuleiro implements ActionListener{
-	
+public class MostrarTabuleiro implements ActionListener {
+
 	private Janela frame;
-	private PainelOpcoes po;
+	private Jogador j;
 	protected Partida partida;
-	
-	public MostrarTabuleiro (Janela frame) {
+	private PainelOpcoes po;
+
+	public MostrarTabuleiro(Janela frame) {
 		this.frame = frame;
+		po = new PainelOpcoes(frame);
 	}
 
 	public void actionPerformed(ActionEvent arg0) {
-		po = new PainelOpcoes(frame);
+		j = new Jogador();
 		Dados d = new Dados();
 		File f = new File("dados");
-		d.escrever(po.getText(), f);
+		d.escrever(j.getNome(), f);
 		partida = new Partida(new PainelBotoes().listaCelulas);
-		Plano p = new Plano(8,8);
-		partida.iniciarPartida(p);
+		partida.iniciarPartida();
 		frame.pontTabu.setVisible(true);
 		frame.relatorio.setVisible(false);
 	}

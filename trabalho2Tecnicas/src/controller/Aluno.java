@@ -15,17 +15,18 @@ public class Aluno {
 	protected Random random = new Random();
 	protected ArrayList<Aluno> listaDeAlunos = new ArrayList<Aluno>();
 
-	public Aluno(int quantAluno, Plano p) {
+	public Aluno(Plano p) {
 		super();
-		this.quantAluno = quantAluno;
-//		if (quantAluno <= p.listaDeCelulas.size() / 2) {
-//			this.quantAluno = quantAluno;
-//		}
-	this.p = p;
+		this.p = p;
 	}
 
 	public Aluno() {
 		// TODO Auto-generated constructor stub
+	}
+
+	public Aluno(int linha, int coluna) {
+		posicaox = linha;
+		posicaoy = coluna;
 	}
 
 	public void setPosicaox(int posicaox) {
@@ -43,45 +44,20 @@ public class Aluno {
 	public int getPosicaoyAluno() {
 		return posicaoy;
 	}
-	
+
 	public int getQuantAluno() {
 		return quantAluno;
 	}
-	
+
 	public int getQuantAlunosPegos() {
 		return quantAlunosPegos;
 	}
 
-	public void sortearPosicaoAlunos(int numAlunos, ArrayList<Celula> listaCelulas) {
-//		for (int i = 0; i < numAlunos; i++) {
-//			int posX = random.nextInt(listaCelulas.size());
-//			int posY = random.nextInt(listaCelulas.size());
-//
-//			Aluno aluno = new Aluno(numAlunos, new Plano(8,8));
-//			posicaox = posX;
-//			posicaoy = posY;
-//			listaDeAlunos.add(aluno);
-//
-//			Celula celula = p.retornarCelula(posX, posY);
-//			celula.setAluno(aluno);
-			
-			 for (int i = 0; i < 5; i++) {
-		            int index = random.nextInt(listaCelulas.size());
-		            Celula celula = listaCelulas.get(index);
-		            celula.setAluno(new Aluno());
-		        }
-			}
-
-	
 
 	public void encontrouAluno(Robo r) {
-		int x = r.getPosicaox();
-		int y = r.getPosicaoy();
-		Celula c = p.retornarCelula(x, y);
-		if (c.possuiAluno()) {
-		quantAluno--;
-		quantAlunosPegos++;
-		}
+			quantAluno--;
+			quantAlunosPegos++;
+		
 	}
 
 }

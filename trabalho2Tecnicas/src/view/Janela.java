@@ -17,7 +17,7 @@ public class Janela extends JFrame{
 		
 		setTitle("Jogo Ilha Java");
 		
-		setSize(600, 600);
+		setSize(500, 500);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		//setResizable(false);
 		setLocationRelativeTo(null);
@@ -29,10 +29,14 @@ public class Janela extends JFrame{
 		pontTabu.setVisible(false);
 		relatorio.setVisible(false);
 		this.add(opcoes, BorderLayout.NORTH);
-		this.add(pontTabu, BorderLayout.WEST);
-		this.add(relatorio, BorderLayout.CENTER);
+		this.add(pontTabu, BorderLayout.CENTER);
+		this.add(relatorio, BorderLayout.SOUTH);
 				
 		setVisible(true);
+	}
+	
+	public PainelOpcoes getPainel() {
+		return opcoes;
 	}
 	
 }

@@ -11,15 +11,21 @@ public class Bug {
 	protected Random random = new Random();
 	protected int quantBug = 7;
 	protected int quantBugPegos = 0;
+	protected Plano plano;
 	protected ArrayList<Bug> listaDeBugs = new ArrayList<Bug>();
 	protected Celula c;
 	
-	public Bug(int quantBug) {
-		this.quantBug = quantBug;
+	public Bug(Plano p) {
+		this.plano = p;
 	}
 
 	public Bug() {
 		// TODO Auto-generated constructor stub
+	}
+
+	public Bug(int linha, int coluna) {
+		posicaox = linha;
+		posicaoy = coluna;
 	}
 
 	public void setPosicaox(int posicaox) {
@@ -46,35 +52,10 @@ public class Bug {
 		return quantBugPegos;
 	}
 	
-	public void sortearPosicaoBug(int numBugs, ArrayList<Celula> listaCelulas) {
-//	    for (int i = 0; i < numBugs; i++) {
-//	        int posX = random.nextInt(listaCelulas.size());
-//	        int posY = random.nextInt(listaCelulas.size());
-//
-//	        Bug bug = new Bug(numBugs);
-//	        posicaox = posX;
-//	        posicaoy = posY;
-//	        listaDeBugs.add(bug);
-//	        Plano p = new Plano(8, 8);
-//	        Celula celula = p.retornarCelula(posX, posY);
-//	        celula.setBug(bug);
-	    	for (int i = 0; i < 7; i++) {
-	            int index = random.nextInt(listaCelulas.size());
-	            Celula celula = listaCelulas.get(index);
-	            celula.setBug(new Bug());
-	        }
-	    }
-
-	
 	public void encontrouBug(Robo r) {
-		int x = r.getPosicaox();
-		int y = r.getPosicaoy();
-		Plano p = new Plano(8, 8);
-		Celula c = p.retornarCelula(x, y);
-		if (c.possuiBug()) {
 			quantBug--;
 			quantBugPegos++;
-		}
+			
 	}
 	
 }

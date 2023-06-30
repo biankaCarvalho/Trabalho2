@@ -20,8 +20,8 @@ public class PainelAlunoBug extends JPanel {
 		b = new Bug();
 		
 		this.setBackground(Color.lightGray);
-		JLabel quantA = new JLabel("Alunos: " + a.getQuantAluno());
-		JLabel quantB = new JLabel("Bugs: " + b.getQuantBug());
+		JLabel quantA = new JLabel("Alunos: " + a.getQuantAlunosPegos());
+		JLabel quantB = new JLabel("Bugs: " + b.getQuantBugPego());
 		
 		this.setLayout(new FlowLayout());
 		this.add(quantB);

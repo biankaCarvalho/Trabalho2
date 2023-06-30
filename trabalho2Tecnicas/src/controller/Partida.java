@@ -16,7 +16,6 @@ public class Partida {
 	protected int rodada = 0;
 
 	public Partida(ArrayList<Celula> c) {
-//		listaDeRobo = r;
 		p = new Plano(8, 8);
 		this.c = c;
 		partida = true;
@@ -33,17 +32,6 @@ public class Partida {
 		}
 		return false;
 	}
-
-//	public void gerarRelatorio(Bug bug, Aluno aluno, ArrayList<Robo> robos) {
-//		System.out.println();
-//		System.out.println("Quantidade de BUGS restantes: " + bug.quantBug);
-//		System.out.println("Quantidade de ALUNOS restantes: " + aluno.quantAluno);
-//		for (Robo robo : robos) {
-//			System.out.println();
-//			System.out.println("Robo " + robo.getNome() + "; Pontuação = " + robo.getPontos() + "; Posição atual= ("
-//					+ robo.posicaox + ", " + robo.posicaoy + ")");
-//		}
-//	}
 
 	public Robo verificarVencedor(ArrayList<Robo> robos) {
 		Robo vencedor = null;
@@ -65,14 +53,12 @@ public class Partida {
 
 	// iniciando a partida
 
-	public void iniciarPartida(Plano p) {
-		do {
+	public void iniciarPartida() {
 			rodada++;
 			SortearPosicaoAB sortear = new SortearPosicaoAB(c);
 			sortear.adicionarAlunosEBugs();
-		} while (aindaTemAluno(p));
-
 	}
+	
 	public int getRodada() {
 		return rodada;
 	}

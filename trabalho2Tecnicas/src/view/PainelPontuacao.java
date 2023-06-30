@@ -28,10 +28,7 @@ public class PainelPontuacao extends JPanel {
 	public PainelPontuacao() {
 		robo = new Robo();
 		pontuacao = new Pontuacao();
-		JButton verificar = new JButton("Verificar");
-		verificar.setBackground(Color.white);
-		verificar.addActionListener(new VerificarPontuacao());
-		
+
 		JButton sair = new JButton("Sair do Jogo");
 		sair.setBackground(Color.white);
 		sair.addActionListener(new SairdoJogo());
@@ -39,9 +36,8 @@ public class PainelPontuacao extends JPanel {
 		BotoesRobos robos = new BotoesRobos();
 		painelRobosComPontuacao();
 		this.add(robos.painelRobos);
-		this.add(verificar);
 		this.add(sair);
-		this.setLayout(new GridLayout(5, 1));
+		this.setLayout(new GridLayout(4, 1));
 
 		this.setVisible(true);
 	}
@@ -95,17 +91,3 @@ class SairdoJogo implements ActionListener {
 	}
 }
 
-class VerificarPontuacao implements ActionListener {
-	public void actionPerformed(ActionEvent e) {
-		Aluno aluno = new Aluno(5, new Plano(8,8));
-		Bug bug = new Bug(7);
-		Robo robo = new Robo();
-		Celula c = new Celula(robo.getPosicaox(), robo.getPosicaoy());
-
-		if (c.possuiAluno()) {
-			robo.pegouAluno(aluno);
-		} else if (c.possuiBug()) {
-			robo.pegouBug(bug);
-		}
-	}
-}

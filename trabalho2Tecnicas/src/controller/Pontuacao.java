@@ -16,21 +16,21 @@ public class Pontuacao {
 	public void setpontuacaoRobo1(Celula c) {
 		if (c.possuiAluno())
 			pontuacaoR1 += 10;
-		else if (c.possuiAluno())
+		else if (c.possuiBug())
 			pontuacaoR1 -= 15;
 	}
 
 	public void setpontuacaoRobo2(Celula c) {
 		if (c.possuiAluno())
 			pontuacaoR2 += 10;
-		else if (c.possuiAluno())
+		else if (c.possuiBug())
 			pontuacaoR2 -= 15;
 	}
 
 	public void setpontuacaoRobo3(Celula c) {
 		if (c.possuiAluno())
 			pontuacaoR3 += 10;
-		else if (c.possuiAluno())
+		else if (c.possuiBug())
 			pontuacaoR3 -= 15;
 	}
 

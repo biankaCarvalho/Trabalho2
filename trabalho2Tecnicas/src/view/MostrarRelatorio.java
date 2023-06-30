@@ -7,7 +7,6 @@ public class MostrarRelatorio implements ActionListener{
 	
 	private Janela frame;
 	public MostrarRelatorio(Janela frame) {
-		
 		this.frame = frame;
 	}
 
@@ -15,7 +14,6 @@ public class MostrarRelatorio implements ActionListener{
 		frame.pontTabu.setVisible(false);
 		frame.relatorio.setVisible(true);
 	}
-
 
 }
 
